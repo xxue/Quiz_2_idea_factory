@@ -6,11 +6,12 @@
     </div>
     <% @ideas.each do |i| %>
       <div class= "ideapanel">
-            <h2><a href="#"><%= link_to i.title, i %></a></h2>
-            <p id = "description"><%= i.description %></p>
+            <h2 class = "title"><%= i.title %></h2>
+            <div class = "description"><%= link_to i.description, i %></div>
           <div class="btn-group">
               <%= link_to %>By <%= i.user.first_name.capitalize %>
           </div>
+
 
           <div class="btn-group" id = "firstbutton">
               <%= button_to idea_likes_path(i), class:"btn btn-default", style: "padding:2px; font-size: 15px" do %>

@@ -11,10 +11,10 @@
 }
 // logo pic
 #xxnavpic {
-height: 90px;
-width: 130px;
-margin-top: 5px;
-border: 2px solid wheat
+  height: 80px;
+  width: 120px;
+  margin-top: 5px;
+  border: 2px solid wheat
 }
 //right nav font
 #logpanel {
@@ -29,23 +29,20 @@ border: 2px solid wheat
  margin-top: 20px
 }
 
-#newidea {
-
-
-}
-
-
 ////////////////////////
 //main
 .ideapanel {
   display: block;
-  background-color: grey;
+
 }
 
-.ideapanel >h2 >a{
-  color: black
+.description > a{
+  color: black;
+  text-decoration: none
 }
 
-#description {
-  font-size: 18px
+.description {
+  display: none;
+  font-size: 18px;
+  font-color: black
 }
