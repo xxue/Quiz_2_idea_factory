@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-2">
+      <h2><%= @idea.title %></h2>
+      <p><%= @idea.user.try(:full_name) %></p>
+      <p class="date"><%= @idea.created_at %></p><br>
+      <h4><%= @idea.description %></h4><br>
+
+      <a href="#"><%= link_to 'Edit', edit_idea_path(@idea) %> |</a>
+      <a href="#"><%= link_to 'Delete', idea_path(@idea), method: :delete %></a>
+    </div>
+
+    <div class="col-xs-3 col-xs-offset-2">
+        <h3>Reviews</h3><br>
+        <div class="">
+        <%= form_for [@idea, @review], html: {class: "nifty_form"} do |f| %>
+        <%=f.label :body, style:'font-size:18px; font-family: San Francisco, sans-serif'%>
+        <%= f.text_area :body, size: "60x12" %><br>
+        <%=f.label :user, style:'font-size:18px; font-family: San Francisco, sans-serif'%>
+        <%=f.text_field :user %>
+        <%= f.submit "Submit" %>
+        <% end %>
+      </div>
+
+      <div class="col-xs-9  col-md-9">
+        <% @idea.reviews.latest_first.each do |review| %>
+         <div class = "block">
+           <a href="#"><strong><%= review.user%></strong></a><br>
+           <p><%= review.body %></p>
+         </div> <br>
+          <p><%= review.body %></p>
+              <%= link_to 'Edit',
+              edit_review_path(review) %> |
+              <%= link_to 'Delete',
+                idea_review_path(@idea, review),
+                method: :delete %></p>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

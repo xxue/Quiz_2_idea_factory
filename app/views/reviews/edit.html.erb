@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-3" >
+      <h1>Edit Review:</h1>
+        <%= form_for @review, url: review_path(@review)  do |f| %>
+
+      <div>
+        <% f.label :body %>
+        <%= f.text_area :body %>
+      </div>
+
+      <div class="button">
+        <%= f.submit 'Update' %>
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

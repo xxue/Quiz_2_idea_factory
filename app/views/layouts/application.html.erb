@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IdeaFactory</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type = "javascript">
+
+ jQuery(document).ready(funtion(){
+    jQuery("#firstbutton").mousedown(function () {
+      jQuery("#firstbutton").attr("disabled", true);
+       jQuery("#secondbutton").attr("disabled", false);
+
+//     function disablefirstbutton() {
+//     document.getElementById("firstbutton").disabled = true;
+//     document.getElementById("secondbutton").disabled = false;
+// }
+//
+// function disablesecondbutton() {
+//     document.getElementById("secondbutton").disabled = true;
+//     document.getElementById("firstbutton").disabled = false;
+// }
+})
+    </script>
+  </head>
+
+  <body>
+    <%= render '/ideas/nav' %>
+    <%= yield %>
+  </body>
+</html>
