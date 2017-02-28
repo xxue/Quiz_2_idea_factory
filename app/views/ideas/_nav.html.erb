@@ -11,7 +11,7 @@
 
               <% if current_user %>
                   <li><a href="#">Hello <em><%= current_user.first_name.upcase%></em></a></li>
-                  <li><%= link_to "SIGN OUT", signout_path, method: :delete%>
+                  <li><%= link_to "SIGN OUT", sessions_path, method: :delete%>
                     </li>
              <% else %>
                   <li><%= link_to "SIGN UP", new_user_path %></li>
@@ -21,6 +21,8 @@
       <!-- 3. new idea button -->
           <div>
             <button>
+              <%#=  %>
+             <%#= render template: 'ideas/new' %>
               <%= link_to "NEW IDEA", new_idea_path%>
             </button>
           </div>
