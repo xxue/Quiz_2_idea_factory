@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-$( ".title" ).click(function() {
+$( ".title" ).on("click", function() {
   $(this).next('div').fadeToggle("description");
 });
 });

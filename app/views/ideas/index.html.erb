@@ -12,6 +12,7 @@
               <%= link_to %>By <%= i.user.first_name.capitalize %>
           </div>
 
+          <% if current_user  %>
 
           <div class="btn-group" id = "firstbutton">
               <%= button_to idea_likes_path(i), class:"btn btn-default", style: "padding:2px; font-size: 15px" do %>
@@ -20,15 +21,22 @@
           </div>
 
            <%#= unlike%>
-           <% if i.likes.any? %>
+             <%# byebug  %>
+           <% if current_user == i.likes.last.try(:user) %>
+           <%# if i.likes.any? %>
+
+
              <div class="btn-group" id="secondbutton">
-             <%= button_to like_path(i.likes.last), class:"btn btn-default", style: "padding:2px; font-size: 15px", method: :delete do %>
+               <%= button_to like_path(i.likes.last), class:"btn btn-default", style: "padding:2px; font-size: 15px", method: :delete do %>
                unlike
+
              <% end %>
              </div>
            <% end %>
+           <% end  %>
 
            <%#= count likes %>
+
            <div class="btn-group" style = "float: right">
              <span style="font-size:20px">Likes: <%= i.likes.count%></span>
            </div>
