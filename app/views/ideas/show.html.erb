@@ -11,8 +11,8 @@
     </div>
 
     <div class="col-xs-3 col-xs-offset-2">
-        <h3>Reviews</h3><br>
-        <div class="">
+      <h3>Reviews</h3><br>
+      <div class="">
         <%= form_for [@idea, @review], html: {class: "nifty_form"} do |f| %>
         <%=f.label :body, style:'font-size:18px; font-family: San Francisco, sans-serif'%>
         <%= f.text_area :body, size: "60x12" %><br>
@@ -29,13 +29,13 @@
            <p><%= review.body %></p>
          </div> <br>
           <p><%= review.body %></p>
-              <%= link_to 'Edit',
+          <%= link_to 'Edit',
               edit_review_path(review) %> |
-              <%= link_to 'Delete',
-                idea_review_path(@idea, review),
-                method: :delete %></p>
+          <%= link_to 'Delete',
+              idea_review_path(@idea, review),
+              method: :delete %></p>
           <% end %>
-        </div>
+      </div>
     </div>
   </div>
 </div>

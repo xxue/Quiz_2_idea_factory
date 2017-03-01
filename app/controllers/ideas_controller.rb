@@ -5,13 +5,11 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
-    # @user = User.all
   end
 
   def create
     @idea = Idea.new(idea_params)
     @idea.user = current_user
-    # @idea.user = @user
     if @idea.save
       flash[:notice] = 'Idea posted!'
       redirect_to idea_path(@idea)
@@ -40,7 +38,6 @@ class IdeasController < ApplicationController
       redirect_to idea_path(@idea), notice: 'Idea updated!'
     else
       render :edit
-      # edit form
     end
   end
 
@@ -60,8 +57,8 @@ class IdeasController < ApplicationController
     end
 
     def authorize
-        if cannot?(:manage, @idea)
-          redirect_to root_path, alert: 'Not authorized!'
-        end
+      if cannot?(:manage, @idea)
+        redirect_to root_path, alert: 'Not authorized!'
+      end
     end
 end

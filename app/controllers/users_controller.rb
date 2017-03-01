@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!, only: [:edit, :update_password]
+    # before_action :authenticate_user!, only: [:edit, :update_password]
     # skip_before_action :authenticate_user!
   def new
     @user = User.new

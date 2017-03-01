@@ -1,10 +1,10 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-before_action(:find_review, { only: [:edit, :destroy, :update] })
+  before_action(:find_review, { only: [:edit, :destroy, :update] })
   before_action(:find_idea, { only: [:create, :destroy] })
+
   def create
     @review = @idea.reviews.build(review_params)
-
     if @review.save
         redirect_to idea_path(@idea)
       else
@@ -18,9 +18,9 @@ before_action(:find_review, { only: [:edit, :destroy, :update] })
   end
 
   def edit
-      if current_user != @review.user
-        redirect_to root_path, alert: 'not authorized!'
-      end
+    if current_user != @review.user
+      redirect_to root_path, alert: 'not authorized!'
+    end
   end
 
   def update

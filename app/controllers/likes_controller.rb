@@ -22,12 +22,7 @@ class LikesController < ApplicationController
 
   private
     def find_idea
-      # URL solution
-      # /ideas/:idea_id/likes/:id
       @idea ||= Idea.find(params[:idea_id])
-
-      # # Rails solution
-      # @idea ||= @like.idea
     end
 
     def find_like
