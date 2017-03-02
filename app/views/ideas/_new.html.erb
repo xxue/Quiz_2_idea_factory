@@ -1,19 +1,22 @@
 <div class="row">
-  <div class="col-xs-4 col-xs-offset-4">
+  <div class="col-xs-12">
     <h2 style = "font-size:30px; font-family: San Francisco, sans-serif; text-align:center; color:grey"></h2>
       <div class="form-group">
         <%= form_for @idea do |f| %>
         <div>
           <%= f.label :title, style:'font-size:23px; font-family: San Francisco, sans-serif'%><br>
-          <%= f.text_field :title, style: 'width:350px; height: 30px; border: 2px solid grey' %>
+          <%= f.text_field :title, style: 'width:100%; height: 30px; border: 2px solid grey' %>
         </div>
         <div>
           <%= f.label :description, style:'font-size:22px; font-family: San Francisco, sans-serif' %><br>
-          <%= f.text_area :description, style: 'width:350px; height: 200px; border: 2px solid grey' %>
+          <%= f.text_area :description, style: 'width:100%; height: 350px; border: 2px solid grey' %>
         </div>
-        <div class="submit-button" style="margin-top:20px">
-          <%= f.submit%>
+        <div class="modal-footer">
+            <%= f.submit "Save", class: "btn btn-primary", style:"margin-top:20px"%>
+
         </div>
+
+
       <% end %>
     </div>
   </div>

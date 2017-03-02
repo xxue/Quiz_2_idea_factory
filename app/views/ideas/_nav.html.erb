@@ -18,11 +18,35 @@
 
       <!-- 3. new idea button -->
           <div>
-            <button>
-              <%#=  %>
-             <%#= render template: 'ideas/new' %>
-              <%= link_to "NEW IDEA", new_idea_path%>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+              NEW IDEA
             </button>
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">New Idea</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                <% if user_signed_in? %>
+                  <%=render "new" %>
+                    <% else  %>
+                    <h2>Sign in to create new ideas</h2>
+                      <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
           </div>
         </ul>
     </div>

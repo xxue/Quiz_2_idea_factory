@@ -8,7 +8,7 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.new(idea_params)
+    @idea = Idea.new idea_params
     @idea.user = current_user
     if @idea.save
       flash[:notice] = 'Idea posted!'
@@ -20,6 +20,7 @@ class IdeasController < ApplicationController
 
   def index
      @ideas = Idea.order(created_at: :desc)
+     @idea = Idea.new
   end
 
   def show
